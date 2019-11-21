@@ -12,10 +12,11 @@ import Foundation
 
 print("Do you want to hatch your tamagotchi? Y or N" )
 if let request = readLine() {
-    if request == "Y" {
+    if request == "Y" || request == "y" {
         print("What do you want to name your tamagotchi?")
         if let chosenName = readLine() {
             let tamagotchi = Tamagotchi(name: chosenName)
+            print(tamagotchi)
         }
 
         
