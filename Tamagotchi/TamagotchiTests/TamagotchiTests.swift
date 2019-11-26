@@ -13,7 +13,7 @@ class TamagotchiTests: XCTestCase {
     func testTamagotchiWithNoArgsSetDefaultValuesAndReturnsWithNonNilObjects() {
         //arrange
         //act
-        let myTamagotchi = Tamagotchi()
+        let myTamagotchi = Tamagotchi(name: "Gotchi")
         //assert
         XCTAssertNotNil(myTamagotchi)
         XCTAssertEqual(myTamagotchi.getAge(), 0)
@@ -21,8 +21,25 @@ class TamagotchiTests: XCTestCase {
         XCTAssertEqual(myTamagotchi.getGender(), "Male")
     }
     
+    func testFeedingTamagotchiSnacksReturnsNoLongerHungry() {
+        //arrange
+        //act
+        let myTamagotchi = Tamagotchi(name: "Gotchi")
+        let testCases = [(input: false, expected: false), (input: true, expected: false)]
+        //assert
+        for testCase in testCases {
+            let actual = myTamagotchi.feedSnacks(data: testCase.input)
+            XCTAssertEqual(actual, testCase.expected)
+        }
+    }
     
-    
+    func testHealingTamagotchiReturnsFive() {
+        //arrange
+        //act
+        let myTamagotchi = Tamagotchi(name: "Gotchi")
+        //assert
+        XCTAssertEqual(myTamagotchi.heal(), 5)
+    }
     
     
     

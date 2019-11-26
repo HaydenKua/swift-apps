@@ -9,17 +9,25 @@
 import Foundation
 
 
+func menu() {
+    print("Do you want to hatch your tamagotchi? Y or N" )
+    if let request = readLine() {
+        if request == "Y" || request == "y" {
+            print("What do you want to name your tamagotchi?")
+            if let chosenName = readLine() {
+                let tamagotchi = Tamagotchi(name: chosenName)
+                print(tamagotchi.displayStats())
+            }
+            print("What do you want to do?: feed snacks(1), heal(2)")
+            if let userChoice = readLine() {
+                if userChoice == "1" {
+                    print(tamagotchi.getHealth())
+                }
+            }
 
-print("Do you want to hatch your tamagotchi? Y or N" )
-if let request = readLine() {
-    if request == "Y" || request == "y" {
-        print("What do you want to name your tamagotchi?")
-        if let chosenName = readLine() {
-            let tamagotchi = Tamagotchi(name: chosenName)
-            print(tamagotchi)
+            
         }
-
-        
     }
 }
 
+menu()
