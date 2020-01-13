@@ -16,6 +16,7 @@
 		9E62664323CB933B00DBFED9 /* CarCustomizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E62664223CB933B00DBFED9 /* CarCustomizerTests.swift */; };
 		9E62664E23CB933C00DBFED9 /* CarCustomizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E62664D23CB933C00DBFED9 /* CarCustomizerUITests.swift */; };
 		9E62665C23CB954800DBFED9 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E62665B23CB954800DBFED9 /* Car.swift */; };
+		9EB6F16523CB9F340041E0CF /* StarterCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6F16423CB9F340041E0CF /* StarterCars.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		9E62664D23CB933C00DBFED9 /* CarCustomizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCustomizerUITests.swift; sourceTree = "<group>"; };
 		9E62664F23CB933C00DBFED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E62665B23CB954800DBFED9 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		9EB6F16423CB9F340041E0CF /* StarterCars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterCars.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				9E62663623CB933B00DBFED9 /* LaunchScreen.storyboard */,
 				9E62663923CB933B00DBFED9 /* Info.plist */,
 				9E62665B23CB954800DBFED9 /* Car.swift */,
+				9EB6F16423CB9F340041E0CF /* StarterCars.swift */,
 			);
 			path = CarCustomizer;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				9E62663023CB933300DBFED9 /* ViewController.swift in Sources */,
 				9E62662C23CB933300DBFED9 /* AppDelegate.swift in Sources */,
 				9E62665C23CB954800DBFED9 /* Car.swift in Sources */,
+				9EB6F16523CB9F340041E0CF /* StarterCars.swift in Sources */,
 				9E62662E23CB933300DBFED9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

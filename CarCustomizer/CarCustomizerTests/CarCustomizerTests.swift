@@ -38,7 +38,7 @@ class CarCustomizerTests: XCTestCase {
         Make: Mazda
         Model: MX-5
         Top Speed: 125
-        Acceleration (0-60): 7.7
+        Acceleration (0-60): 7.7s
         Handling: 5
         """
         XCTAssertEqual(actual, expected)
