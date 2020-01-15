@@ -23,14 +23,83 @@ class CarCustomizerUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+    func testWhenBoughtExhaustAndTiresPackagesAerodynamicAndMysteryPackagesAreDisabled() {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+        
+        //act
+        app.switches["tiresSwitch"].tap()
+        app.switches["engineAndExhaustSwitch"].tap()
+        
+        //assert
+        XCTAssertEqual(app.switches["aerodynamicsSwitch"].isEnabled, false)
+        XCTAssertEqual(app.switches["mysterySwitch"].isEnabled, false)
+        
+        
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    
+    func testButtonsAreReenabledWhenGoingToNextCar() {
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launch()
+        
+        //act
+        app.buttons["cycleCars"].tap()
+        
+        //assert
+        XCTAssertEqual(app.switches["tiresSwitch"].isEnabled, true)
+        XCTAssertEqual(app.switches["engineAndExhaustSwitch"].isEnabled, true)
+        XCTAssertEqual(app.switches["aerodynamicsSwitch"].isEnabled, true)
+        XCTAssertEqual(app.switches["mysterySwitch"].isEnabled, true)
+        
+        // Use recording to get started writing UI tests.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testRemainingFundsEquals1000OnLaunch() {
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launch()
+        
+        //act
+        let actual = app.staticTexts["remainingFunds"].label
+        let expected = "Remaining Funds: 1000"
+        
+        //assert
+        XCTAssertEqual(actual, expected)
+
+        
+        // Use recording to get started writing UI tests.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testDisplayStatsLoadedIsCorrect() {
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launch()
+        
+        //act
+        let actual = app.staticTexts["selectedCarStatistics"].label
+        let expected = """
+        Make: Mazda
+        Model: MX-5
+        Top Speed: 125
+        Acceleration (0-60): 7.7s
+        Handling: 5
+        """
+        
+        //assert
+        XCTAssertEqual(actual, expected)
+
+        
+        // Use recording to get started writing UI tests.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
 
     func testLaunchPerformance() {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {

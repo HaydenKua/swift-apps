@@ -11,17 +11,14 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var engineAndExhaustPackage: UISwitch!
-    
     @IBOutlet weak var tiresPackage: UISwitch!
-    
     @IBOutlet weak var aerodynamicsPackage: UISwitch!
-    
     @IBOutlet weak var theMysteryPackage: UISwitch!
-    
     @IBOutlet weak var carStatistics: UILabel!
-    
     @IBOutlet weak var remainingFundsDisplay: UILabel!
+    @IBOutlet weak var remainingTimeDisplay: UILabel!
     
+    var timeRemaining = 31
     var remainingFunds = 0 {
         didSet {
             remainingFundsDisplay.text = "Remaining Funds: \(remainingFunds)"
@@ -34,13 +31,28 @@ class ViewController: UIViewController {
             carStatistics.text = car?.displayStats()
         }
     }
+    var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         car = starterCars.cars[0]
         remainingFunds = 1000
+        resetDisplay()
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
 
+    }
+    
+    func resetDisplay() {
+        remainingFunds = 1000
+        engineAndExhaustPackage.setOn(false, animated: true)
+        tiresPackage.setOn(false, animated: true)
+        aerodynamicsPackage.setOn(false, animated: true)
+        theMysteryPackage.setOn(false, animated: true)
+        engineAndExhaustPackage.isEnabled = true
+        tiresPackage.isEnabled = true
+        aerodynamicsPackage.isEnabled = true
+        theMysteryPackage.isEnabled = true
     }
     
     
@@ -50,6 +62,7 @@ class ViewController: UIViewController {
         }
         car = starterCars.cars[count]
         count += 1
+        resetDisplay()
     }
     
     
@@ -128,6 +141,21 @@ class ViewController: UIViewController {
             engineAndExhaustPackage.isEnabled = false
         } else {
             engineAndExhaustPackage.isEnabled = true
+        }
+    }
+    
+    @objc func countdown() {
+        if timeRemaining > 0 {
+            timeRemaining -= 1
+            remainingTimeDisplay.text = "\(timeRemaining)"
+
+            
+        } else {
+            timer?.invalidate()
+            engineAndExhaustPackage.isEnabled = false
+            tiresPackage.isEnabled = false
+            aerodynamicsPackage.isEnabled = false
+            theMysteryPackage.isEnabled = false
         }
     }
     
