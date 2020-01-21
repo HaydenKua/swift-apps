@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         tamagotchi = Tamagotchi(name: "Sbeve", gender: "Female", hungry: false, happy: 5, healthy: 5, clean: 5)
         tamagotchiStats.text = tamagotchi?.displayStats()
-        timer = Timer.scheduledTimer(timeInterval: 20.0, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
         timePassedDisplay.text = "Age: 0 Months"
         
     }
@@ -47,12 +47,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cleanUpButton(_ sender: Any) {
+        tamagotchi?.cleanUp()
+        tamagotchiStats.text = tamagotchi?.displayStats()
     }
     
     @objc func countdown() {
-        if timePassed != 15 {
+        if timePassed != 16 {
             timePassedDisplay.text = "Age: \(timePassed) Months"
             timePassed += 1
+            tamagotchi?.getHunger() -= 1
             
         } else {
             timer?.invalidate()

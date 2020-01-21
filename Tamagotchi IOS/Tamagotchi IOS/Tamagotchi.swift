@@ -37,6 +37,15 @@ class Tamagotchi {
         Cleaniness: \(clean)
         """
     }
+    
+    func getHunger() -> Bool {
+        return self.hungry
+    }
+    
+    func getHappiness() -> Int {
+        return self.happy
+    }
+
 
     func feedMeals() {
         hungry = false
