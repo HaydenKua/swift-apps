@@ -12,29 +12,29 @@ class Tamagotchi {
     
     private var name: String
     private var gender: String
-    private var age: Int
     private var hungry: Bool
     private var happy: Int
     private var healthy: Int
+    private var clean: Int
     
-    init(name: String, gender: String, age: Int, hungry: Bool, happy: Int, healthy: Int) {
+    init(name: String, gender: String, hungry: Bool, happy: Int, healthy: Int, clean: Int) {
         
         self.name = name
         self.gender = gender
-        self.age = age
         self.hungry = hungry
         self.happy = happy
         self.healthy = healthy
+        self.clean = clean
     }
     
     func displayStats() -> String{
         return """
         Name: \(name)
         Gender: \(gender)
-        Age: \(age)
-        Hungry?: \(hungry)
-        Happy?: \(happy)
-        Healthy?: \(healthy)
+        Hungriness: \(hungry)
+        Happiness: \(happy)
+        Health: \(healthy)
+        Cleaniness: \(clean)
         """
     }
 
@@ -58,14 +58,19 @@ class Tamagotchi {
     func playGame() {
         if happy != 10 {
             happy += 1
+        
+        }
+        if healthy != 10 {
+            healthy += 1
         }
     }
     
-    func aging() {
-        if age != 10 {
-            age += 1
+    func cleanUp() {
+        if clean != 0 {
+            clean += 1
         }
     }
+    
 
 }
 

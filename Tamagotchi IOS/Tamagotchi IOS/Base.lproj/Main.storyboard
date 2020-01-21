@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tamagotchi Statistics" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nu9-Eh-YbD">
-                                <rect key="frame" x="20" y="77" width="374" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tamagotchi Statistics" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nu9-Eh-YbD">
+                                <rect key="frame" x="125" y="105" width="164" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -42,30 +41,43 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bn-WM-JGk">
-                                <rect key="frame" x="20" y="355" width="73" height="30"/>
+                                <rect key="frame" x="20" y="365" width="73" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play Game"/>
                                 <connections>
                                     <action selector="playGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hKA-iO-m1R"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Passed" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZJ-13-bNa">
-                                <rect key="frame" x="296" y="48" width="98" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Passed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZJ-13-bNa">
+                                <rect key="frame" x="20" y="76" width="97.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkC-lE-2II">
+                                <rect key="frame" x="249" y="256" width="63" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clean Up"/>
+                                <connections>
+                                    <action selector="cleanUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e1M-LF-y34"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nu9-Eh-YbD" firstAttribute="top" secondItem="EZJ-13-bNa" secondAttribute="bottom" constant="8" id="Cbt-cf-1EQ"/>
+                            <constraint firstItem="EZJ-13-bNa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NDw-fr-Fqq"/>
+                            <constraint firstItem="EZJ-13-bNa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="Qja-C2-CBf"/>
+                            <constraint firstItem="nu9-Eh-YbD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ch7-R3-nzh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="cleanUp" destination="hkC-lE-2II" id="upl-8p-MSZ"/>
                         <outlet property="feedMeal" destination="dod-jx-RMp" id="ZAk-k5-L8z"/>
                         <outlet property="feedSnack" destination="qvp-Xz-Iod" id="uiD-D0-Kig"/>
                         <outlet property="playGame" destination="5bn-WM-JGk" id="DH5-v4-VC6"/>
                         <outlet property="tamagotchiStats" destination="nu9-Eh-YbD" id="bGP-ir-uE3"/>
-                        <outlet property="timePassed" destination="EZJ-13-bNa" id="jVu-Uh-H1w"/>
                         <outlet property="timePassedDisplay" destination="EZJ-13-bNa" id="tf6-Dw-qMf"/>
                     </connections>
                 </viewController>
