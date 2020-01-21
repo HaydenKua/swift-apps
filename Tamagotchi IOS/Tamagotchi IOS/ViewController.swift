@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var feedMeal: UIButton!
     @IBOutlet var feedSnack: UIButton!
     @IBOutlet var playGame: UIButton!
+    @IBOutlet var cleanUp: UIButton!
     @IBOutlet var timePassedDisplay: UILabel!
     var timer: Timer?
     
@@ -23,9 +24,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        tamagotchi = Tamagotchi(name: "Sbeve", gender: "Female", age: 1, hungry: false, happy: 5, healthy: 5)
+        tamagotchi = Tamagotchi(name: "Sbeve", gender: "Female", hungry: false, happy: 5, healthy: 5, clean: 5)
         tamagotchiStats.text = tamagotchi?.displayStats()
         timer = Timer.scheduledTimer(timeInterval: 20.0, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
+        timePassedDisplay.text = "Age: 0 Months"
         
     }
     
@@ -44,16 +46,19 @@ class ViewController: UIViewController {
         tamagotchiStats.text = tamagotchi?.displayStats()
     }
     
+    @IBAction func cleanUpButton(_ sender: Any) {
+    }
+    
     @objc func countdown() {
-        if timePassed != 10 {
+        if timePassed != 15 {
+            timePassedDisplay.text = "Age: \(timePassed) Months"
             timePassed += 1
-            tamagotchi?.aging()
-            tamagotchiStats.text = tamagotchi?.displayStats()
-            timePassedDisplay.text = "Years Passed: \(timePassed)"
-        }else {
             
+        } else {
+            timer?.invalidate()
         }
     }
+    
     
 }
 
