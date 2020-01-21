@@ -15,7 +15,6 @@
 		7769753123CDD00D006CB048 /* Tamagotchi_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7769753023CDD00D006CB048 /* Tamagotchi_IOSTests.swift */; };
 		7769753C23CDD00D006CB048 /* Tamagotchi_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7769753B23CDD00D006CB048 /* Tamagotchi_IOSUITests.swift */; };
 		7769754A23CDD111006CB048 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7769754923CDD111006CB048 /* Tamagotchi.swift */; };
-		7769754C23CDD2CA006CB048 /* OwnTamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7769754B23CDD2CA006CB048 /* OwnTamagotchi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +49,6 @@
 		7769753B23CDD00D006CB048 /* Tamagotchi_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi_IOSUITests.swift; sourceTree = "<group>"; };
 		7769753D23CDD00D006CB048 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7769754923CDD111006CB048 /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
-		7769754B23CDD2CA006CB048 /* OwnTamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnTamagotchi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 				7769752423CDD00D006CB048 /* LaunchScreen.storyboard */,
 				7769752723CDD00D006CB048 /* Info.plist */,
 				7769754923CDD111006CB048 /* Tamagotchi.swift */,
-				7769754B23CDD2CA006CB048 /* OwnTamagotchi.swift */,
 			);
 			path = "Tamagotchi IOS";
 			sourceTree = "<group>";
@@ -265,7 +262,6 @@
 				7769751E23CDD00D006CB048 /* ViewController.swift in Sources */,
 				7769754A23CDD111006CB048 /* Tamagotchi.swift in Sources */,
 				7769751C23CDD00D006CB048 /* AppDelegate.swift in Sources */,
-				7769754C23CDD2CA006CB048 /* OwnTamagotchi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
