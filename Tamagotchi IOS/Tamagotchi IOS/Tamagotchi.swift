@@ -16,8 +16,10 @@ class Tamagotchi {
     private var happy: Int
     private var healthy: Int
     private var clean: Int
+    private var sick: Bool
     
-    init(name: String, gender: String, hungry: Bool, happy: Int, healthy: Int, clean: Int) {
+    
+    init(name: String, gender: String, hungry: Bool, happy: Int, healthy: Int, clean: Int, sick: Bool) {
         
         self.name = name
         self.gender = gender
@@ -25,6 +27,7 @@ class Tamagotchi {
         self.happy = happy
         self.healthy = healthy
         self.clean = clean
+        self.sick = sick
     }
     
     func displayStats() -> String{
@@ -35,6 +38,7 @@ class Tamagotchi {
         Happiness: \(happy)
         Health: \(healthy)
         Cleaniness: \(clean)
+        Sick: \(sick)
         """
     }
     
@@ -49,35 +53,83 @@ class Tamagotchi {
 
     func feedMeals() {
         hungry = false
-        if happy != 10 {
+        if happy != 10 && happy != 0{
             happy += 1
         }
     }
     
     func feedSnack() {
         hungry = false
-        if healthy != 0{
+        if healthy != 0 && healthy != 10{
             healthy -= 1
         }
-        if happy != 10 {
+        if happy != 10 && happy != 0{
             happy += 1
         }
     }
     
     func playGame() {
-        if happy != 10 {
+        if happy != 10 && happy != 0 {
             happy += 1
         
         }
-        if healthy != 10 {
+        if healthy != 10 && healthy != 0{
             healthy += 1
         }
     }
     
     func cleanUp() {
-        if clean != 0 {
+        if clean != 0 && clean != 10 {
             clean += 1
         }
+    }
+    
+    func feedMedicine() {
+            sick = false
+    }
+    
+    func isSick() {
+            sick = true
+    }
+    
+    var counter = 1
+    
+    func statsDegeneration() {
+        hungry = true
+        if happy != 0 && happy != 10 {
+            happy -= 1
+        }
+
+        if counter.isMultiple(of: 2) {
+            if healthy != 0 && healthy != 10 {
+                healthy -= 1
+            }
+            if clean != 0 && clean != 10 {
+                clean -= 1
+            }
+        }
+        counter += 1
+    }
+    
+    var deathCounter = 0
+    
+    func death() -> Bool{
+        if hungry == true || happy == 0 || healthy == 0 || clean == 0 || sick == true {
+            deathCounter += 1
+            if deathCounter == 2 && (hungry == true || happy == 0 || healthy == 0 || clean == 0 || sick == true ) {
+                return true
+            }
+        }
+        return false
+        
+    }
+    
+    func deathConfirmed() -> String {
+        return """
+        Your tamagotchi has died!
+        Shame, Shame, Shame!
+
+        """
     }
     
 
