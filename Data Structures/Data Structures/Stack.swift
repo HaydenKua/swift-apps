@@ -12,10 +12,10 @@ class Stack {
     var stack = [String](repeating: "_", count: 10)
     var top = -1
     
-    func push(_ item: String) -> String{
+    func push(_ item: String) {
         let thing = item
         if top == stack.count - 1 {
-            return "The Stack is full"
+            
         } else {
             top += 1
             stack[top] = thing
@@ -33,9 +33,14 @@ class Stack {
         }
     }
     
-    func peek() {
-        let peek_item = stack[top]
-        print (peek_item)
+    func peek() -> String {
+        if top == -1 {
+            return "There is no item to peek"
+        } else {
+            let peek_item = stack[top]
+            return peek_item
+        }
+        
     }
     
     func outputting_monster() {

@@ -30,5 +30,33 @@ class Data_StructuresTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testPushingItemIntoStackActuallyPushesItemIntoTheLastPositionInTheStack() {
+        //arrange
+        let stack = Stack()
+        let testCases = [(input: "Bob", expected: "Bob"), (input: "Steve", expected: "Steve")]
+        //act
+        //assert
+        for testCase in testCases {
+            stack.push(testCase.input)
+            let actual = stack.peek()
+            XCTAssertEqual(actual, testCase.expected)
+        }
+    }
+    
+    func testPoppingItemFromStackActuallyPopsItemOutOfStack() {
+        //arrange
+        let stack = Stack()
+        stack.push("Bob")
+        stack.push("Steve")
+        //act
+        //assert
+        stack.pop()
+        let actual = stack.peek()
+        let expected = "Bob"
+        XCTAssertEqual(actual, expected)
+        
+    }
+
 
 }
