@@ -12,8 +12,8 @@ class DivisionFactory {
     static func createDivision(code: String, of size: Int) -> Division {
         let division = Division(code: code)
         
-        for _ in 1...size {
-            division.students.append(Student(forename: "x", surname: "y", birthday: Date()))
+        for i in 1...size {
+            division.students.append(Student(forename: "FirstName\(i)", surname: "Surname\(i)", birthday: Date.init()))
         }
         
         
