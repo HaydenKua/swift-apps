@@ -9,10 +9,19 @@
 import Foundation
 
 class Division {
+    
     let code: String
     var students: [Student] = []
+    var absences: [Absence] = []
     
     init(code: String) {
         self.code = code
     }
+    
+    func getAbsence(for date: Date) -> Absence? {
+        return absences.first(where: {
+            $0.takenOn == date
+        })
+    }
+    
 }
