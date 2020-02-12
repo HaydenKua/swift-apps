@@ -8,7 +8,9 @@
 
 import Foundation
 
-class Student {
+class Student:Equatable {
+
+    
     let forename: String
     let surname: String
     let birthday: Date
@@ -19,4 +21,9 @@ class Student {
         self.surname = surname
         self.birthday = birthday
     }
+    
+    static func == (lhs: Student, rhs: Student) -> Bool {
+        return lhs.forename == rhs.forename && lhs.surname == rhs.surname && lhs.birthday == rhs.birthday
+    }
+    
 }

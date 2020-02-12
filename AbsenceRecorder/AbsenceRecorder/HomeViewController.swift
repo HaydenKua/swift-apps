@@ -66,6 +66,33 @@ class HomeViewController: UITableViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let allPresent = UIContextualAction(style: .normal, title: "All Present") { action, view, completionHandler in
+            let division = self.divisions[indexPath.row]
+            let absence = Absence(date: self.currentDate, present: division.students)
+            division.absences.append(absence)
+            tableView.reloadData()
+            completionHandler(true)
+            
+        }
+        
+        allPresent.backgroundColor = UIColor.green
+        return UISwipeActionsConfiguration(actions: [allPresent])
+    }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let clearAll = UIContextualAction(style: .normal, title: "Clear All") { action, view, completionHandler in
+            let division = self.divisions[indexPath.row]
+            division.removeAbsence(for: self.currentDate)
+            tableView.reloadData()
+            completionHandler(true)
+            
+        }
+        
+        clearAll.backgroundColor = UIColor.blue
+        return UISwipeActionsConfiguration(actions: [clearAll])
+    }
+    
     @IBAction func previousDay(_ sender: Any) {
         currentDate = Calendar.current.date(byAdding: .day, value: -1, to: currentDate) ?? Date()
         updateDateDisplay()
