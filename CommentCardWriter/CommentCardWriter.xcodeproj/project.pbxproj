@@ -18,6 +18,7 @@
 		77B341C423F2B62900C0D635 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B341C323F2B62900C0D635 /* Comment.swift */; };
 		77B341C623F2B71600C0D635 /* Sentiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B341C523F2B71600C0D635 /* Sentiment.swift */; };
 		77B341C823F2BCCE00C0D635 /* SentimentPhrases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B341C723F2BCCE00C0D635 /* SentimentPhrases.swift */; };
+		77F17F882405306B00383FEA /* SubjectFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F17F872405306B00383FEA /* SubjectFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		77B341C323F2B62900C0D635 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		77B341C523F2B71600C0D635 /* Sentiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiment.swift; sourceTree = "<group>"; };
 		77B341C723F2BCCE00C0D635 /* SentimentPhrases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentPhrases.swift; sourceTree = "<group>"; };
+		77F17F872405306B00383FEA /* SubjectFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				77B3419A23F2B46A00C0D635 /* Assets.xcassets */,
 				77B3419C23F2B46A00C0D635 /* LaunchScreen.storyboard */,
 				77B3419F23F2B46A00C0D635 /* Info.plist */,
+				77F17F872405306B00383FEA /* SubjectFactory.swift */,
 				77B341C123F2B4D200C0D635 /* CommentCard.swift */,
 				77B341C323F2B62900C0D635 /* Comment.swift */,
 				77B341C723F2BCCE00C0D635 /* SentimentPhrases.swift */,
@@ -271,6 +274,7 @@
 				77B341C623F2B71600C0D635 /* Sentiment.swift in Sources */,
 				77B3419623F2B46900C0D635 /* ViewController.swift in Sources */,
 				77B341C823F2BCCE00C0D635 /* SentimentPhrases.swift in Sources */,
+				77F17F882405306B00383FEA /* SubjectFactory.swift in Sources */,
 				77B341C223F2B4D200C0D635 /* CommentCard.swift in Sources */,
 				77B3419423F2B46900C0D635 /* AppDelegate.swift in Sources */,
 				77B341C423F2B62900C0D635 /* Comment.swift in Sources */,

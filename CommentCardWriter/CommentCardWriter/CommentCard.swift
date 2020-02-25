@@ -12,16 +12,24 @@ class CommentCard {
     
     var subject: String
     var teacher: String
-    var comment: Comment
+    var comment: String?
+    var commentGenerator: Comment
     
-    init (subject: String, teacher: String, comment: Comment) {
+    init (subject: String, teacher: String, commentGen: Comment) {
         self.subject = subject
         self.teacher = teacher
-        self.comment = comment
+        self.commentGenerator = commentGen
     }
     
     func getSubject() -> String {
         return subject
     }
+    
+    func createComment() {
+        self.comment = commentGenerator.writeComment()
+    }
+    
+
+    
     
 }
