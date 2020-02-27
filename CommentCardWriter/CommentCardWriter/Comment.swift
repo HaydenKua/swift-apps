@@ -19,10 +19,10 @@ class Comment {
     
     func writeComment () -> String {
         let effort = sentimentPhrases.getEffortComment()
-        let enjoyment = sentimentPhrases.getEnjoymentComment()
+//        let enjoyment = sentimentPhrases.getEnjoymentComment()
         let weakness = sentimentPhrases.getWeaknessComment()
         let strength = sentimentPhrases.getStrengthComment()
-        let comment = strength + enjoyment + effort + weakness
+        let comment = strength + effort + weakness
         
         return comment
     }

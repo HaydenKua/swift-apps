@@ -14,6 +14,7 @@ class CommentCard {
     var teacher: String
     var comment: String?
     var commentGenerator: Comment
+    var everything: [String] = []
     
     init (subject: String, teacher: String, commentGen: Comment) {
         self.subject = subject
@@ -27,6 +28,15 @@ class CommentCard {
     
     func createComment() {
         self.comment = commentGenerator.writeComment()
+    }
+    
+    func getEverything() -> [String] {
+        self.everything.append(subject)
+        self.everything.append(teacher)
+        self.everything.append(comment!)
+        return everything
+        
+        
     }
     
 

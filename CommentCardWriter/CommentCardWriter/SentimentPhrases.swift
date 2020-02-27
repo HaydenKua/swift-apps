@@ -15,12 +15,12 @@ class SentimentPhrases {
     var weaknessPhrases = ["Work Harder", "Contribute more", "More time on EW", "Don't know content", "Find it difficult"]
     var strengthPhrases = ["Do well in EWs", "Do well in tests", "Pay close attention in divs"]
     var sentiment: Sentiment
-    var commentCard: CommentCard
+//    var commentCard: CommentCard
 
     
-    init (sentiment: Sentiment, commentCard: CommentCard) {
+    init (sentiment: Sentiment) {
         self.sentiment = sentiment
-        self.commentCard = commentCard
+//        self.commentCard = commentCard
     }
     
     func getEffortComment() -> String {
@@ -29,12 +29,12 @@ class SentimentPhrases {
         return effortComment[i]
     }
     
-    func getEnjoymentComment() -> String {
-        let i = sentiment.getEnjoyment()
-        let subject = commentCard.getSubject()
-        var enjoymentComment = ["I love \(subject)", "I enjoy \(subject)", "I don't enjoy \(subject)", "I dislike \(subject)"]
-        return enjoymentComment[i]
-    }
+//    func getEnjoymentComment() -> String {
+//        let i = sentiment.getEnjoyment()
+//        let subject = commentCard.getSubject()
+//        var enjoymentComment = ["I love \(subject)", "I enjoy \(subject)", "I don't enjoy \(subject)", "I dislike \(subject)"]
+//        return enjoymentComment[i]
+//    }
     
     func getWeaknessComment() -> String {
         let i = sentiment.getWeakness()
