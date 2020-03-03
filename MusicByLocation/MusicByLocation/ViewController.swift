@@ -20,7 +20,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
-        getArtists()
     }
 
     @IBAction func findMusic(_ sender: Any) {
@@ -33,9 +32,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 if error != nil {
                     self.musicRecommendations.text = "Could not perform lookup of location for latitude: \(firstLocation.coordinate.latitude.description)"
                 } else {
-                    self.musicRecommendations.text = "\(placemarks?[0].country ?? "Unknown")\n\(placemarks?[0].locality ?? "Unknown")\n\(placemarks?[0].subLocality ?? "Unknown")\n\(placemarks?[0].thoroughfare ?? "Unknown")"
+                    if let firstPlacemark = placemarks?[0] {
+                        self.updateRecommendedArtists(search: firstPlacemark.locality)
+                    }
                 }
-                
             })
             musicRecommendations.text = firstLocation.coordinate.latitude.description
         }
@@ -45,14 +45,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         musicRecommendations.text = "Could not access user's location. Error: \(error.localizedDescription)"
     }
     
-    func getArtists() -> String {
-        guard let url = URL(string: "https://itunes.apple.com/search?term=Lionel%20Richie&entity=musicArtist")
-            else {
-                print("Invalid URL")
-                return "Invalid URL. Wasn't able to search Itunes"
+    func updateRecommendedArtists(search: String?) {
+        let searchTerm = search?.components(separatedBy: " ").first ?? "Lionel"
+        
+        guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchTerm)&entity=musicArtist")
+            else{
+                print("Invalid URL. Not able to update recommended artists")
+                return
         }
         
         let request = URLRequest(url: url)
+    
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let data = data {
@@ -70,7 +73,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
         }.resume()
         
-        return ""
         
     }
     
