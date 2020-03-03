@@ -12,7 +12,6 @@ class CommentCard {
     
     var subject: String
     var teacher: String
-    var comment: String?
     var commentGenerator: Comment
     var everything: [String] = []
     
@@ -26,20 +25,17 @@ class CommentCard {
         return subject
     }
     
-    func createComment() {
-        self.comment = commentGenerator.writeComment()
+    func getTeacher() -> String {
+        return teacher
     }
     
-    func getEverything() -> [String] {
-        self.everything.append(subject)
-        self.everything.append(teacher)
-        self.everything.append(comment!)
-        return everything
-        
-        
+    func createComment() -> String {
+        let comment = commentGenerator.writeComment()
+        self.everything.append(comment)
+        return comment
     }
     
-
+    
     
     
 }

@@ -22,7 +22,7 @@ class Comment {
 //        let enjoyment = sentimentPhrases.getEnjoymentComment()
         let weakness = sentimentPhrases.getWeaknessComment()
         let strength = sentimentPhrases.getStrengthComment()
-        let comment = strength + effort + weakness
+        let comment = strength + ". " + effort + ". " + weakness + "."
         
         return comment
     }

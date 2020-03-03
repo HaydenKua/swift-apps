@@ -23,35 +23,6 @@
             </objects>
             <point key="canvasLocation" x="-2401" y="84"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="Ugo-Uz-JkQ">
-            <objects>
-                <tableViewController id="zHp-oC-hcw" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tbE-c2-nao">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qRE-rV-nx2">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qRE-rV-nx2" id="wHU-wR-kLB">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="zHp-oC-hcw" id="3dS-8c-TgI"/>
-                            <outlet property="delegate" destination="zHp-oC-hcw" id="tYP-wQ-2N9"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="NQ1-Pp-JFe"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QpI-WU-Urc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1313" y="-70"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="7In-ib-ylH">
             <objects>
@@ -60,24 +31,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3U-oY-93Q">
-                                <rect key="frame" x="186" y="201" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CommentBox" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3U-oY-93Q">
+                                <rect key="frame" x="24" y="484" width="367" height="182"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPw-Qt-Z1U">
+                                <rect key="frame" x="140" y="761" width="134" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Generate Comment"/>
+                                <connections>
+                                    <action selector="generateCommentButton:" destination="1Za-3S-eV0" eventType="touchUpInside" id="iOK-GL-xVK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QS8-k3-f4B">
+                                <rect key="frame" x="282" y="61" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Choose Subject"/>
+                                <connections>
+                                    <action selector="chooseSubjectButton:" destination="1Za-3S-eV0" eventType="touchUpInside" id="hpc-qW-2jj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bK5-F3-HpC"/>
                     </view>
                     <connections>
+                        <outlet property="chooseSubject" destination="QS8-k3-f4B" id="2yu-o3-7Jz"/>
+                        <outlet property="commentBox" destination="o3U-oY-93Q" id="IVx-0m-Fhv"/>
                         <outlet property="commentPerSubject" destination="o3U-oY-93Q" id="Brb-LP-7YT"/>
+                        <outlet property="generateComment" destination="RPw-Qt-Z1U" id="VLe-rE-47o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Qk-xO-dB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-364" y="-70"/>
+            <point key="canvasLocation" x="-365.21739130434787" y="-70.3125"/>
         </scene>
     </scenes>
 </document>
