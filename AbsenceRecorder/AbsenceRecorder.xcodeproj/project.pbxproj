@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9E2F524023E8DB490011E560 /* DivisionAbsenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2F523F23E8DB490011E560 /* DivisionAbsenceViewController.swift */; };
+		9E74EF962416B8B9005EB58C /* DivisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E74EF952416B8B9005EB58C /* DivisionTests.swift */; };
+		9E74EF972416B913005EB58C /* Absence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAEF52F23ECB9DA00514242 /* Absence.swift */; };
+		9E74EF982416B926005EB58C /* Division.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE3FA23E240DB00B11A00 /* Division.swift */; };
+		9E74EF992416B929005EB58C /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE3F823E2406E00B11A00 /* Student.swift */; };
+		9E74EF9B2416C1BD005EB58C /* UserDocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E74EF9A2416C1BD005EB58C /* UserDocumentManager.swift */; };
 		9E7AE3F923E2406E00B11A00 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE3F823E2406E00B11A00 /* Student.swift */; };
 		9E7AE3FB23E240DB00B11A00 /* Division.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE3FA23E240DB00B11A00 /* Division.swift */; };
 		9E7AE3FD23E241AD00B11A00 /* DivisionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7AE3FC23E241AD00B11A00 /* DivisionFactory.swift */; };
@@ -43,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		9E2F523F23E8DB490011E560 /* DivisionAbsenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionAbsenceViewController.swift; sourceTree = "<group>"; };
+		9E74EF952416B8B9005EB58C /* DivisionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionTests.swift; sourceTree = "<group>"; };
+		9E74EF9A2416C1BD005EB58C /* UserDocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDocumentManager.swift; sourceTree = "<group>"; };
 		9E7AE3F823E2406E00B11A00 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		9E7AE3FA23E240DB00B11A00 /* Division.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Division.swift; sourceTree = "<group>"; };
 		9E7AE3FC23E241AD00B11A00 /* DivisionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionFactory.swift; sourceTree = "<group>"; };
@@ -127,6 +134,7 @@
 				9EAEF52D23ECB71300514242 /* StudentCell.swift */,
 				9EAEF52F23ECB9DA00514242 /* Absence.swift */,
 				9EA67E6B23F210C900E8C156 /* DivisionCell.swift */,
+				9E74EF9A2416C1BD005EB58C /* UserDocumentManager.swift */,
 			);
 			path = AbsenceRecorder;
 			sourceTree = "<group>";
@@ -136,6 +144,7 @@
 			children = (
 				9ED4DA8723E1D75200B5179F /* AbsenceRecorderTests.swift */,
 				9ED4DA8923E1D75200B5179F /* Info.plist */,
+				9E74EF952416B8B9005EB58C /* DivisionTests.swift */,
 			);
 			path = AbsenceRecorderTests;
 			sourceTree = "<group>";
@@ -287,6 +296,7 @@
 				9EAEF52E23ECB71300514242 /* StudentCell.swift in Sources */,
 				9E2F524023E8DB490011E560 /* DivisionAbsenceViewController.swift in Sources */,
 				9ED4DA7323E1D75100B5179F /* SceneDelegate.swift in Sources */,
+				9E74EF9B2416C1BD005EB58C /* UserDocumentManager.swift in Sources */,
 				9E7AE3F923E2406E00B11A00 /* Student.swift in Sources */,
 				9EA67E6C23F210C900E8C156 /* DivisionCell.swift in Sources */,
 				9E7AE3FD23E241AD00B11A00 /* DivisionFactory.swift in Sources */,
@@ -297,6 +307,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E74EF972416B913005EB58C /* Absence.swift in Sources */,
+				9E74EF962416B8B9005EB58C /* DivisionTests.swift in Sources */,
+				9E74EF982416B926005EB58C /* Division.swift in Sources */,
+				9E74EF992416B929005EB58C /* Student.swift in Sources */,
 				9ED4DA8823E1D75200B5179F /* AbsenceRecorderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
